@@ -112,7 +112,7 @@ def train(model, trainloader, optimizer, scheduler, epoch, criterion, model_MLP,
         att_labels_ill = att_labels4.to(conf.device)
         att_labels_occ = att_labels5.to(conf.device)
 
-        logits_per_image, logits_per_text = do_batch(model, data, joint_texts)
+        logits_per_image, _ = do_batch(model, data, joint_texts)
         logits_per_image = logits_per_image.view(-1, len(blur_list), len(occ_list), len(pose_list), len(exp_list), len(ill_list), len(quality_list))
 
         logits_quality  = logits_per_image.sum(1).sum(1).sum(1).sum(1).sum(1)
@@ -308,9 +308,6 @@ if __name__ == "__main__":
 
     trainloader = dataSet(conf)
     criterion, optimizer, scheduler, weighting_method, optimizer_mlp, scheduler_mlp = trainSet(conf, model, len(trainloader), model_MLP)
-    
-    q_weight, pose_weight, blur_weight, occ_weight, ill_weight, exp_weight = 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
-    weights_list = [q_weight, pose_weight, blur_weight, occ_weight, ill_weight, exp_weight]
 
     print('='*20 + 'Training' + '='*20)
     for epoch in range(0, conf.Epo_th):
