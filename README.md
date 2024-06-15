@@ -48,4 +48,4 @@ If you find this code useful in your research, please consider citing us:
 
 ## Acknowledgements
 ####
-This code is primarily based on the implementation of [CLIP-Pytorch](https://github.com/openai/CLIP). It draws inspiration from [LIQE](https://github.com/zwx8981/LIQE) as well. We express our gratitude to the authors for their exceptional contributions and valuable works.
+This code is primarily based on the implementation of [CLIP-Pytorch](https://github.com/openai/CLIP). It draws inspiration from [CR-FIQA](https://github.com/fdbtrs/CR-FIQA/tree/main) and [LIQE](https://github.com/zwx8981/LIQE) as well. We express our gratitude to the authors for their exceptional contributions and valuable works.
