@@ -2,7 +2,7 @@
 
 ## Description
 ####
-This is the code repository for the paper "CLIB-FIQA: Face Image Quality Assessment with Confidence Calibration," accepted in the Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR). The paper is available at [here](https://openaccess.thecvf.com/content/CVPR2024/papers/Ou_CLIB-FIQA_Face_Image_Quality_Assessment_with_Confidence_Calibration_CVPR_2024_paper.pdf).
+This is the code repository for the paper "CLIB-FIQA: Face Image Quality Assessment with Confidence Calibration," accepted in the Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024. The paper is available at [here](https://openaccess.thecvf.com/content/CVPR2024/papers/Ou_CLIB-FIQA_Face_Image_Quality_Assessment_with_Confidence_Calibration_CVPR_2024_paper.pdf).
 
 ## Abstract
 ####
@@ -20,7 +20,7 @@ $ pip install ftfy regex tqdm dlib opencv-python
 
 ## Training
 ####
-- **Obtaining Quality Anchors and Quality-Factor Labels**: Modify the data_path and outfile_path in the ./generate_labels.py. The dlib_weight and mfn_weight parameters are used to extract face quality factors. These pre-trained weights can be downloaded from the respective sources: [dlib_weight](https://github.com/tzutalin/dlib-android/blob/master/data/shape_predictor_68_face_landmarks.dat) and [mfn_weight](https://drive.google.com/file/d/1pmZgFQWtOfZXAWlFYaMt8KZW5OARM_r0/view?usp=sharinghttps://drive.google.com/file/d/1pmZgFQWtOfZXAWlFYaMt8KZW5OARM_r0/view?usp=sharing). For the fr_weight and header_weight parameters, you need to train a new CR-FIQA model to get the corresponding backbone and header. Please refer to the official repository [here](https://github.com/fdbtrs/CR-FIQA/tree/main) for details on the training implementation.
+- **Obtaining Quality Anchors and Quality-Factor Labels**: Modify the data_path and outfile_path in the ./generate_labels.py. The dlib_weight and mfn_weight parameters are used to extract face quality factors. These pre-trained weights can be downloaded from the respective sources: [dlib_weight](https://github.com/tzutalin/dlib-android/blob/master/data/shape_predictor_68_face_landmarks.dat) and [mfn_weight](https://drive.google.com/drive/folders/18Su86Hw2pO5LBDD2eqzHJT82qTlV2gI7?usp=drive_link). For the fr_weight and header_weight parameters, you need to train a new CR-FIQA model to get the corresponding backbone and header. Please refer to the official repository [here](https://github.com/fdbtrs/CR-FIQA/tree/main) for details on the training implementation.
   > python generate_labels.py
 
 - **Training CLIB-FIQA Model**: Download pre-trained CLIP model at [here](https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt) and put it into ./weights/RN50.pt path. Modify the data_list obtained by generate_labels.py in config_train.py.
@@ -29,7 +29,7 @@ $ pip install ftfy regex tqdm dlib opencv-python
 
 ## Inference
 ####
-- You can download our well-trained CLIB-FIQA model at [Google Disk](https://drive.google.com/file/d/1dFISi5O33eVIf6Unax_1-ctCDgkO9fd3/view?usp=drive_link).
+- You can download our well-trained CLIB-FIQA model at [Google Disk](https://drive.google.com/file/d/18-Bkno_CWDaT9EA-FbnJ1oDcg1RDkPTt/view?usp=sharing).
 - Modify the clip_weights and image_path parameters in the inference.py.
   > python inference.py
 
@@ -45,3 +45,7 @@ If you find this code useful in your research, please consider citing us:
     pages     = {1694-1704}
 }
 ```
+
+## Acknowledgements
+####
+This code is primarily based on the implementation of [CLIP-Pytorch](https://github.com/openai/CLIP). It draws inspiration from [LIQE](https://github.com/zwx8981/LIQE) as well. We express our gratitude to the authors for their exceptional contributions and valuable works.
