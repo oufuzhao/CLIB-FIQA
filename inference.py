@@ -40,6 +40,7 @@ def backboneSet(clip_model):
     net, _ = clip.load(clip_model, device='cuda', jit=False)
     return net
 
+@torch.no_grad()
 def do_batch(model, x, text):
     batch_size = x.size(0)
     x = x.view(-1, x.size(1), x.size(2), x.size(3))
