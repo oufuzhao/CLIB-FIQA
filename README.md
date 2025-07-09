@@ -29,6 +29,7 @@ $ pip install ftfy regex tqdm dlib opencv-python
 
 ## Inference
 ####
+- Download [RN50.pt](https://openaipublic.azureedge.net/clip/models/afeb0e10f9e5a86da6080e35cf09123aca3b358a0c3e3b6c78a7b63bc04b6762/RN50.pt) and put it into ./weights/RN50.pt path (Optional, required if you run inference directly).
 - You can download our well-trained CLIB-FIQA model at [Google Disk](https://drive.google.com/file/d/18-Bkno_CWDaT9EA-FbnJ1oDcg1RDkPTt/view?usp=sharing).
 - Modify the clip_weights and image_path parameters in the inference.py.
   > python inference.py
